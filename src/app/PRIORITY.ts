@@ -1,3 +1,3 @@
-enum PRIORITY {
+export enum PRIORITY {
 	LOW,MEDIUM,HIGH
 }

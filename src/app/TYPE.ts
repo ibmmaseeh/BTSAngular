@@ -1,3 +1,3 @@
-enum TYPE {
+export enum TYPE {
   PROBLEM_REQUEST,CHANGE_REQUEST
   }
