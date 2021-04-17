@@ -18,7 +18,7 @@ export class CreateBugComponent implements OnInit {
     const promise = this.bugService.saveBug(this.bug);
     promise.subscribe(response => {
       console.log(response);
-      alert("Bug saved...")
+      alert("Bug saved...");
     },
       error => {
         console.log(error);
