@@ -4,11 +4,15 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CreateBugComponent } from './create-bug/create-bug.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateBugComponent
+    CreateBugComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule
