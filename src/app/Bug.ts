@@ -1,6 +1,6 @@
-import { PRIORITY } from '../PRIORITY';
-import { STATUS } from '../STATUS';
-import { TYPE } from '../TYPE';
+import { PRIORITY } from './PRIORITY';
+import { STATUS } from './STATUS';
+import { TYPE } from './TYPE';
 export class Bug {
   id: string;
   priority: PRIORITY;

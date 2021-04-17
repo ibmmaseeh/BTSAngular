@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Bug } from './create-bug/Bug';
+import { Bug } from './Bug';
 
 @Injectable({
   providedIn: 'root'

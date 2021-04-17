@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BugService } from '../bug.service';
-import { Bug } from './Bug';
+import { Bug } from '../Bug';
 
 
 @Component({
