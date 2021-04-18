@@ -7,6 +7,7 @@ import { CreateBugComponent } from './create-bug/create-bug.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UpdateBugComponent } from './update-bug/update-bug.component';
+import { GetBugComponent } from './get-bug/get-bug.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UpdateBugComponent } from './update-bug/update-bug.component';
     CreateBugComponent,
     HeaderComponent,
     FooterComponent,
-    UpdateBugComponent
+    UpdateBugComponent,
+    GetBugComponent
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule

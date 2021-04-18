@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Bug } from './Bug';
 
 @Injectable({
@@ -17,6 +17,21 @@ export class BugService {
   updateBug(bugId, updatedBody) {
     const endpointURL = 'http://localhost:8080/bug/' + bugId;
     return this.http.put(endpointURL, updatedBody);
+  }
+
+  getBugs() {
+    const httpHeaders = new HttpHeaders();
+    const endpointURL = 'http://localhost:8080/bug/'
+    httpHeaders.append('content-type', 'application/json');
+    return this.http.get(endpointURL, { headers: httpHeaders });
+  }
+
+  getBug(bugId) {
+    const httpHeaders = new HttpHeaders();
+    const endpointURL = 'http://localhost:8080/bug/' + bugId;
+    httpHeaders.append('content-type', 'application/json');
+    return this.http.get(endpointURL, { headers: httpHeaders });
+
   }
 
 }
