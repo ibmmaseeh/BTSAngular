@@ -30,6 +30,7 @@ export class CreateBugComponent implements OnInit {
 
   }
   ngOnInit(): void {
+
   }
 
 }

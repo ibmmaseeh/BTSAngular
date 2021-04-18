@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CreateBugComponent } from './create-bug/create-bug.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UpdateBugComponent } from './update-bug/update-bug.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateBugComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UpdateBugComponent
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule
