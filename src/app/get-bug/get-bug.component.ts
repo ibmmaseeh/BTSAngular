@@ -11,9 +11,9 @@ export class GetBugComponent implements OnInit {
   bug: Bug = new Bug();
   constructor(private bugService: BugService) { }
   bugList: any;
-  getBug(bugId: any) {
+  getBug(bugTitle: any) {
     //let bugId = (<HTMLInputElement>document.getElementById('bugId')).value
-    this.bugService.getBug(bugId).subscribe(response => {
+    this.bugService.getBug(bugTitle).subscribe(response => {
       this.bugList = [response];
       console.log(response);
       alert('Bug Listed .....')

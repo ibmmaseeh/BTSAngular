@@ -29,9 +29,9 @@ export class BugService {
     return this.http.get(endpointURL, { headers: httpHeaders });
   }
 
-  getBug(bugId) {
+  getBug(bugTitle) {
     const httpHeaders = new HttpHeaders();
-    const endpointURL = 'http://localhost:8080/bug/' + bugId;
+    const endpointURL = 'http://localhost:8080/bug/' + bugTitle;
     httpHeaders.append('content-type', 'application/json');
     return this.http.get(endpointURL, { headers: httpHeaders });
 

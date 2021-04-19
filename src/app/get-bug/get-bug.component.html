@@ -43,14 +43,14 @@
 
   <form class="jumbotron required" id="searchBug">
     <div class="form-group row">
-      <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
+      <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug Title</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="Enter Bug Id" id="bugId" id="bugId" [(ngModel)]="bug.id"
-          name="bugId" required>
+        <input type="text" class="form-control" placeholder="Enter Bug Title" id="bugTitle" [(ngModel)]="bug.title"
+          name="bugTitle" required>
       </div>
 
       <div class="col-sm-6">
-        <button type="button" class="btn btn-outline-primary form-control" (click)="getBug(bug.id)">Get Bug</button>
+        <button type="button" class="btn btn-outline-primary form-control" (click)="getBug(bug.title)">Get Bug</button>
 
       </div>
     </div>
