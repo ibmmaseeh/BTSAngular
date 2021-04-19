@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Bug } from '../Bug';
 import { BugService } from '../bug.service';
+import { Bug } from '../Bug';
+
 
 @Component({
   selector: 'app-create-bug',
@@ -8,23 +9,28 @@ import { BugService } from '../bug.service';
   styleUrls: ['./create-bug.component.css']
 })
 export class CreateBugComponent implements OnInit {
-  title:string="Create Bug";
-  bug:Bug=new Bug();
-  BugArray:Bug[]=[];
-  constructor(private bugService:BugService) { }
-  save(){
-    const promise=this.bugService.save(this.bug);
-    promise.subscribe(response =>{
+  title: String = 'BugForm';
+  bug: Bug = new Bug();
+
+
+  constructor(private bugService: BugService) { }
+  saveBug() {
+    const promise = this.bugService.saveBug(this.bug);
+    promise.subscribe(response => {
       console.log(response);
-      alert('user added..');
-      this.BugArray.push(Object.assign({},this.bug));
+      alert("Bug saved...");
     },
-    error=> {
-      console.log(error);
-      alert("error Happened...");
-    })
+      error => {
+        console.log(error);
+        alert(error.statusText);
+
+      }
+    )
+
+
   }
   ngOnInit(): void {
+
   }
 
 }
