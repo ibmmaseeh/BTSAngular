@@ -50,14 +50,14 @@
       </div>
 
       <div class="col-sm-6">
-        <button type="button" class="btn btn-outline-primary form-control " (click)="getBug()">Get Bug</button>
+        <button type="button" class="btn btn-outline-primary form-control" (click)="getBug(bug.id)">Get Bug</button>
 
       </div>
     </div>
 
-    <div class="text-center " style="margin-top:50px">
+    <!-- <div class="text-center " style="margin-top:50px">
       <button type="button" class="btn btn-outline-primary form-control" (click)="getBugs()">Get all Bugs</button>
-    </div>
+    </div>-->
 
     <div class="table-responsive">
       <table class=" table table-bordered " style="border: 2px solid #000000; margin-top:50px">
@@ -78,19 +78,22 @@
 
         </thead>
         <tbody id="bugsTable" style="border: 2px solid #000000">
-          <tr *ngFor='let bug of bugList'>
-            <td>{{bug.title}}</td>
-            <td>{{bug.description}}</td>
-            <td>{{bug.status}}</td>
-            <td>{{bug.priority}}</td>
-            <td>{{bug.type}}</td>
-            <td>{{bug.submitOnDate}}</td>
-            <td>{{bug.buildVersion}}</td>
-            <td>{{bug.projectId}}</td>
-            <td>{{bug.module}}</td>
-            <td>{{bug.product}}</td>
-            <td>{{bug.etaDate}}</td>
-          </tr>
+          <ng-container *ngFor="let bug of bugList,index as i">
+
+            <tr>
+              <td>{{bug.title}}</td>
+              <td>{{bug.description}}</td>
+              <td>{{bug.status}}</td>
+              <td>{{bug.priority}}</td>
+              <td>{{bug.type}}</td>
+              <td>{{bug.submitOnDate}}</td>
+              <td>{{bug.buildVersion}}</td>
+              <td>{{bug.projectId}}</td>
+              <td>{{bug.module}}</td>
+              <td>{{bug.product}}</td>
+              <td>{{bug.etaDate}}</td>
+            </tr>
+          </ng-container>
 
         </tbody>
 

@@ -11,9 +11,10 @@ export class GetBugComponent implements OnInit {
   bug: Bug = new Bug();
   constructor(private bugService: BugService) { }
   bugList: any;
-  getBug() {
-    let bugId = (<HTMLInputElement>document.getElementById('bugId')).value
+  getBug(bugId: any) {
+    //let bugId = (<HTMLInputElement>document.getElementById('bugId')).value
     this.bugService.getBug(bugId).subscribe(response => {
+      this.bugList = [response];
       console.log(response);
       alert('Bug Listed .....')
 
@@ -27,6 +28,10 @@ export class GetBugComponent implements OnInit {
 
   }
   getBugs() {
+
+  }
+
+  ngOnInit(): void {
     this.bugService.getBugs().subscribe(response => {
       this.bugList = response;
       console.log(response);
@@ -38,10 +43,6 @@ export class GetBugComponent implements OnInit {
 
       }
     )
-
-  }
-
-  ngOnInit(): void {
   }
 
 }

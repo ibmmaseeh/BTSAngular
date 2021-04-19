@@ -10,7 +10,10 @@ export class BugService {
   constructor(private http: HttpClient) { }
   saveBug(bug: Bug) {
     return this.http.post('http://localhost:8080/bug', bug, {
-      headers: { "content-type": 'application/json' }
+      headers: {
+        "content-type": 'application/json',
+        reponseType: 'text'
+      }
     });
   }
 
