@@ -1,1 +1,127 @@
-<p>create-bug works!</p>
+<html>
+  <h3>{{title}}</h3>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link defer rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+</head>
+<body>
+  <div class="jumbotron required" id="createBug">
+    <div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Title</label>
+        <div class="col">
+          <textarea [(ngModel)]='bug.title' minlength="5" maxlength="200" class="form-control" placeholder="Title in less than 200 characters"
+            id="title" required></textarea>
+        </div>
+
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Description</label>
+        <div class="col">
+          <textarea [(ngModel)]='bug.description'maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters"
+            id="description" required></textarea>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Priority</label>
+        <div class="col">
+
+          <select [(ngModel)]='bug.priority'class="form-control" id="priority" required>
+            <option value="" disabled selected>Select Priority</option>
+            <option>LOW</option>
+            <option>MEDIUM</option>
+            <option>HIGH</option>
+          </select>
+        </div>
+
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
+
+        <div class="col">
+          <select [(ngModel)]='bug.status'class="form-control" value="NEW" id="status" required>
+            <option value="" disabled selected>Select Option</option>
+            <option>NEW</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Type</label>
+        <div class="col">
+          <select [(ngModel)]='bug.type'class="form-control" id="type" required>
+            <option value="" disabled selected>Select Type</option>
+            <option>PROBLEM_REQUEST</option>
+            <option>CHANGE_REQUEST</option>
+          </select>
+
+
+        </div>
+
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
+
+        <div class="col">
+          <input [(ngModel)]='bug.submitOnDate' [ngModelOptions]="{standalone: true}" class="custom-select custom-select-md " type="date" id="submitOnDate">
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Build Version</label>
+        <div class="col">
+          <input type="text" [(ngModel)]='bug.buildVersion' [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Build Version" id="buildVersion" required>
+        </div>
+
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Project ID</label>
+
+        <div class="col">
+          <input type="text" [(ngModel)]='bug.projectId' [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter project ID" id="projectId" required>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Module</label>
+        <div class="col">
+          <input type="text" [(ngModel)]='bug.module' [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Module" id="module" required>
+        </div>
+
+        <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Product</label>
+
+        <div class="col">
+          <input type="text" [(ngModel)]='bug.product' [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Product Type " id="product" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">ETA</label>
+
+      <div class="col-sm-4">
+        <input [(ngModel)]='bug.etaDate' [ngModelOptions]="{standalone: true}" class="custom-select custom-select-md " type="date" id="etaDate" required>
+      </div>
+    </div>
+
+
+  <div class="text-center">
+    <button type="button" class="btn btn-outline-primary form-control" (click)="save()">Create</button>
+
+  </div>
+  </div>
+  <footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3"><small>© 2021 Copyright: CODE404</small></div>
+  </footer>
+</body>
+
+</html>
