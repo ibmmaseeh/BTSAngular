@@ -43,18 +43,24 @@
 
   <form class="jumbotron required" id="searchBug">
     <div class="form-group row">
-      <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug Title</label>
-      <div class="col-sm-4">
+
+      <div class="col-sm-6">
         <input type="text" class="form-control" placeholder="Enter Bug Title" id="bugTitle" [(ngModel)]="bug.title"
           name="bugTitle" required>
       </div>
 
       <div class="col-sm-6">
-        <button type="button" class="btn btn-outline-primary form-control" (click)="getBug(bug.title)">Get Bug</button>
-
+        <input type="text" class="form-control" placeholder="Enter Bug Status" id="bugStatus" [(ngModel)]="bug.status"
+          name="bugStatus" required>
       </div>
-    </div>
 
+    </div>
+    <div>
+      <div class="text-center" style="margin-top: 50px;">
+        <button type="button" class="btn btn-outline-primary col-sm-6" (click)="getBug()"> Get Bug</button>
+      </div>
+
+    </div>
     <!-- <div class="text-center " style="margin-top:50px">
       <button type="button" class="btn btn-outline-primary form-control" (click)="getBugs()">Get all Bugs</button>
     </div>-->

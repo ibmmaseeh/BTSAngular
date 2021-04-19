@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BugService } from '../bug.service';
 import { Bug } from '../Bug';
+import { STATUS } from '../STATUS';
 
 @Component({
   selector: 'app-get-bug',
@@ -11,25 +12,51 @@ export class GetBugComponent implements OnInit {
   bug: Bug = new Bug();
   constructor(private bugService: BugService) { }
   bugList: any;
-  getBug(bugTitle: any) {
-    //let bugId = (<HTMLInputElement>document.getElementById('bugId')).value
-    this.bugService.getBug(bugTitle).subscribe(response => {
-      this.bugList = [response];
-      console.log(response);
-      alert('Bug Listed .....')
+  searchElement: any;
+  responseList: Boolean;
+  getBug() {
+    let bugStatus = (<HTMLInputElement>document.getElementById('bugStatus')).value;
+    let bugTitle = (<HTMLInputElement>document.getElementById('bugTitle')).value;
+    let endpointURL = 'http://localhost:8080/bug/';
 
-    },
-      error => {
-        console.log(error);
-        alert(error.statusText);
+    if (Object.values(STATUS).includes(bugStatus)) {
 
-      }
-    )
+      endpointURL = endpointURL + 'status/' + bugStatus;
+      this.bugService.getBug(endpointURL).subscribe(response => {
+        this.bugList = response;
+        console.log(response);
+        alert('Bug Listed .....')
+
+      },
+        error => {
+          console.log(error);
+          alert(error.statusText);
+
+        }
+      )
+    }
+    else {
+      endpointURL = endpointURL + 'title/' + bugTitle;
+      this.bugService.getBug(endpointURL).subscribe(response => {
+        this.bugList = [response];
+        console.log(response);
+        alert('Bug Listed .....')
+
+      },
+        error => {
+          console.log(error);
+          alert(error.statusText);
+
+        }
+      )
+    }
+
+
 
   }
-  getBugs() {
+  // getBugs() {
 
-  }
+  // }
 
   ngOnInit(): void {
     this.bugService.getBugs().subscribe(response => {
